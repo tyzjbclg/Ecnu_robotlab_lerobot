@@ -189,7 +189,7 @@ python -c "from lerobot.common.datasets.lerobot_dataset import LeRobotDataset; d
 运行以下命令来进行模型训练：steps=10000是训练步数，步数越多越好，但是考虑到训练时间成本，我们就设置为10000步，batch_size值参考自己的显存，我的显存是8g，数值是16，大家可以根据自己的显存动态调整，policy.n_action_steps是预测未来动作的步数，大家也可以根据自己的算了自行调整
 
 ```
-	python lerobot/scripts/train.py --dataset.repo_id="" --dataset.root=dataoutputs --policy.type=act --output_dir=outputs/train/act_lego_grasp --job_name=act_lego_grasp --policy.device=cuda --num_workers=2 --batch_size=16 --policy.n_obs_steps=1 --policy.n_action_steps=10 --policy.chunk_size=10 --steps=10000
+	python lerobot/scripts/train.py --dataset.repo_id="" --dataset.root=dataoutputs --policy.type=act --output_dir=outputs/train/act_lego_grasp --job_name=act_lego_grasp --policy.device=cuda --num_workers=2 --batch_size=16 --policy.n_obs_steps=1 --policy.n_action_steps=10 --policy.chunk_size=50 --steps=10000
 ```
 
 参数说明：
