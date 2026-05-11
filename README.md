@@ -186,10 +186,10 @@ python -c "from lerobot.common.datasets.lerobot_dataset import LeRobotDataset; d
 
 ### 五. 模型训练
 
-运行以下命令来进行模型训练：steps=10000是训练步数，步数越多越好，但是考虑到训练时间成本，我们就设置为10000步，batch_size值和num_workers值参考自己的电脑配置动态调整，policy.n_action_steps是预测未来动作的步数，大家也可以根据自己的算力自行调整
+运行以下命令来进行模型训练：steps=100000是训练步数，步数越多越好，但是考虑到训练时间成本，我们就设置为10000步，batch_size值和num_workers值参考自己的电脑配置动态调整，policy.n_action_steps是预测未来动作的步数，大家也可以根据自己的算力自行调整
 
 ```
-	python lerobot/scripts/train.py --dataset.repo_id="" --dataset.root=dataoutputs --policy.type=act --output_dir=outputs/train/act_lego_grasp --job_name=act_lego_grasp --policy.device=cuda --num_workers=2 --batch_size=8 --policy.n_obs_steps=1 --policy.n_action_steps=10 --policy.chunk_size=50 --steps=10000
+	python lerobot/scripts/train.py --dataset.repo_id="" --dataset.root=dataoutputs --policy.type=act --output_dir=outputs/train/act_lego_grasp --job_name=act_lego_grasp --policy.device=cuda --num_workers=2 --batch_size=8 --policy.n_obs_steps=1 --policy.n_action_steps=10 --policy.chunk_size=50 --steps=100000
 ```
 
 参数说明：
