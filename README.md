@@ -152,13 +152,13 @@ python lerobot/common/robot_devices/cameras/opencv.py  --images-dir outputs/imag
 执行下列代码进行数据采集，control.warmup_time_s=5是准备时间为5s，control.episode_time_s=15是数据录制时间为15s，control.reset_time_s=5是重置环境的时间，control.num_episodes=50是一次性采集数据的数量。
 
 ```
-python lerobot/scripts/control_robot.py --robot.type=so101 --control.type=record --control.fps=30 --control.single_task="Grasp a lego block and put it in the bin." --control.repo_id=myuser/so101_lego_grasp --control.root=dataoutputs --control.warmup_time_s=5 --control.episode_time_s=15 --control.reset_time_s=5 --control.num_episodes=50 --control.display_data=true --control.push_to_hub=false --control.video=false
+python lerobot/scripts/control_robot.py --robot.type=so101 --control.type=record --control.fps=30 --control.single_task="Grasp a lego block and put it in the bin." --control.repo_id=myuser/so101_lego_grasp --control.root=dataoutputs --control.warmup_time_s=5 --control.episode_time_s=15 --control.reset_time_s=5 --control.num_episodes=50 --control.display_data=true --control.push_to_hub=false --control.video=true
 ```
 
 如果想要再数据集后增采集，需要在后面增加参数 control.resume=true
 
 ```
-python lerobot/scripts/control_robot.py --robot.type=so101 --control.type=record --control.fps=30 --control.single_task="Grasp a lego block and put it in the bin." --control.repo_id=myuser/so101_lego_grasp --control.root=dataoutputs --control.warmup_time_s=5 --control.episode_time_s=15 --control.reset_time_s=5 --control.num_episodes=10 --control.display_data=true --control.push_to_hub=false --control.video=false --control.resume=true
+python lerobot/scripts/control_robot.py --robot.type=so101 --control.type=record --control.fps=30 --control.single_task="Grasp a lego block and put it in the bin." --control.repo_id=myuser/so101_lego_grasp --control.root=dataoutputs --control.warmup_time_s=5 --control.episode_time_s=15 --control.reset_time_s=5 --control.num_episodes=10 --control.display_data=true --control.push_to_hub=false --control.video=true --control.resume=true
 ```
 
 如果想要删除废弃的数据，则需要删除这些内容并且更改相关参数：
