@@ -149,7 +149,7 @@ python lerobot/common/robot_devices/cameras/opencv.py  --images-dir outputs/imag
         self.camera.set(cv2.CAP_PROP_FPS, 60)
 ```
 
-执行下列代码进行数据采集，control.warmup_time_s=5是准备时间为5s，control.episode_time_s=15是数据录制时间为15s，control.reset_time_s=5是重置环境的时间，control.num_episodes=50是一次性采集数据的数量。
+执行下列代码进行数据采集，control.warmup_time_s=5是准备时间为5s，control.episode_time_s=15是数据录制时间为15s，一次数据采集好之后可以按一下键盘的方向键的右键来直接跳过等待时间，control.reset_time_s=5是重置环境的时间，control.num_episodes=50是一次性采集数据的数量。
 
 ```
 python lerobot/scripts/control_robot.py --robot.type=so101 --control.type=record --control.fps=30 --control.single_task="Grasp a lego block and put it in the bin." --control.repo_id=myuser/so101_lego_grasp --control.root=dataoutputs --control.warmup_time_s=5 --control.episode_time_s=15 --control.reset_time_s=5 --control.num_episodes=50 --control.display_data=true --control.push_to_hub=false --control.video=true
@@ -174,6 +174,13 @@ python lerobot/scripts/control_robot.py --robot.type=so101 --control.type=record
 ![image-20260206135412391](./resource/image-20260206135412391.png)
 
 
+
+新版本pytorch安装视频解码torchcodec包
+
+```
+pip install torchcodec
+
+```
 
 运行以下命令来验证数据集,如果终端打印数据集加载成功共多少个episodes,则表明数据加载成功。这里会跑得比较慢。
 
