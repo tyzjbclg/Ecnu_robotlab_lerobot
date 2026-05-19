@@ -163,9 +163,7 @@ python lerobot/scripts/control_robot.py --robot.type=so101 --control.type=record
 
 如果想要删除废弃的数据，则需要删除这些内容并且更改相关参数：
 
-1.删除废弃的数据
-
-![image-20260206135111076](./resource/image-20260206135111076.png)
+1.删除data和vedio里废弃的数据
 
 2.删除episodes_stats.jsonl和episodes.jsonl里的json对应的json文件
 
